@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <div class="flex justify-center items-center h-screen relative">
+    <!-- Outer Square -->
+    <div id="bigDiv" class="w-[400px] h-[400px] bg-blue-500 absolute z-20  scale-0 transition-all duration-300"></div>
+    <!-- Inner Square -->
+    <div id="smallDiv" class="w-[200px] h-[200px] bg-green-500 z-10 relative"></div>
+  </div>
+
+  <script>
+    const smallDiv = document.getElementById('smallDiv');
+    const bigDiv = document.getElementById('bigDiv');
+
+    smallDiv.addEventListener('mouseover', () => {
+      bigDiv.classList.remove('scale-0');
+      bigDiv.classList.add('scale-100');
+    });
+
+    smallDiv.addEventListener('mouseout', () => {
+      bigDiv.classList.remove('scale-100');
+      bigDiv.classList.add('scale-0');
+    });
+  </script>
+</body>
+</html>

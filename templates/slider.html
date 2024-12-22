@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            width: 50px;
+            height: 50px;
+        }
+        .swiper-button-next::after, .swiper-button-prev::after {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div class="relative w-screen h-[300px] flex justify-center items-center">
+        <div class="swiper-container w-full h-full overflow-hidden">
+            <div class="swiper-wrapper">
+                {% for movie in movies %}
+                <div class="swiper-slide h-[200px] w-[300px] transition-all hover:scale-150">
+                    <a href="{% url 'video' movie.uuid %}">
+                        <img src="{{ movie.flyer.url }}" alt="Movie Flyer" class="w-full h-full object-cover">
+                    </a>
+                </div>
+                <div class="swiper-slide h-[200px] w-[300px] transition-all hover:scale-150">
+                    <a href="{% url 'video' movie.uuid %}">
+                        <img src="{{ movie.flyer.url }}" alt="Movie Flyer" class="w-full h-full object-cover">
+                    </a>
+                </div>
+                <div class="swiper-slide h-[200px] w-[300px] transition-all hover:scale-150">
+                    <a href="{% url 'video' movie.uuid %}">
+                        <img src="{{ movie.flyer.url }}" alt="Movie Flyer" class="w-full h-full object-cover">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-next absolute right-0 top-1/2 transform -translate-y-1/2"></div>
+            <div class="swiper-button-prev absolute left-0 top-1/2 transform -translate-y-1/2"></div>
+        </div>
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Netflix Subscription Model</title>
+      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    </head>
+    <body class="bg-gray-900 text-white">
+      <header class="bg-red-600 p-4 text-center text-2xl font-bold">
+        Netflix Subscription Plans
+      </header>
+      <main class="p-8">
+        <section class="text-center mb-12">
+          <h1 class="text-4xl font-bold mb-4">Choose your plan</h1>
+          <p class="text-lg">Watch all you want, ad-free. <br>Recommendations just for you.</p>
+        </section>
+    
+        <section class="flex justify-center space-x-4">
+          <!-- Basic Plan -->
+          <div class="w-80 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Basic</h2>
+            <p class="text-4xl font-bold mb-6">$8.99</p>
+            <ul class="space-y-2 mb-6">
+              <li>Good video quality</li>
+              <li>Watch on 1 device at a time</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="w-full bg-red-600 py-2 rounded-lg font-semibold">Subscribe</button>
+          </div>
+    
+          <!-- Standard Plan -->
+          <div class="w-80 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Standard</h2>
+            <p class="text-4xl font-bold mb-6">$13.99</p>
+            <ul class="space-y-2 mb-6">
+              <li>Better video quality</li>
+              <li>Watch on 2 devices at a time</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="w-full bg-red-600 py-2 rounded-lg font-semibold">Subscribe</button>
+          </div>
+    
+          <!-- Premium Plan -->
+          <div class="w-80 bg-gray-800 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Premium</h2>
+            <p class="text-4xl font-bold mb-6">$17.99</p>
+            <ul class="space-y-2 mb-6">
+              <li>Best video quality</li>
+              <li>Watch on 4 devices at a time</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="w-full bg-red-600 py-2 rounded-lg font-semibold">Subscribe</button>
+          </div>
+        </section>
+      </main>
+    </body>
+    </html>
+    
+    <!-- Swiper.js JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+    
+        

@@ -1,0 +1,57 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+
+</head>
+<body class="bg-black">
+    <div>
+        <h1 class="text-white font-extrabold text-5xl ml-96 mt-20">Edit Profile</h1><hr class="w-[600px] ml-96">
+        <form method="post">
+            <div class="flex flex-wrap">
+                <img class="h-24 w-24 ml-96" src="{{profile.image.url}}" alt="">
+                <div class="h-[1000px] w-[600px] mt-3">
+                    <input class="h-8 w-96 bg-gray-200 ml-7" type="text" value="{{profile.name}}" name="name">
+                    <h1 class="font-bold text-2xl text-white ml-7 mt-3 ">Language</h1>
+                    <div class="h-7 w-14 bg-gray-300 ml-7 mt-2">
+                        <img src="{% static 'images\arrow-down-01-stroke-rounded.svg' %}" alt="">
+                    </div>
+                    <h1 class="font-bold text-2xl ml-7 text-white mt-10">Game Handle:</h1>
+                    <h2 class="">Your handle is a unique name that'll be used for playing with other Netflix members across all Netflix Games.learn more</h2>
+                    <input class="h-8 w-96 bg-gray-200 ml-7" placeholder="Create Game Handle">
+                    <hr class="w-[600px] ml-50 mt-3">
+                    <h1 class="font-bold text-2xl ml-7 text-white mt-10" >Maturity Setting</h1>
+                    <div class="h-6 w-36 ml-7 bg-gray-300"> All maturity ratings</div>
+                    <h2 class="font-light ml-7 text-white mt-5">Show all titles of maturity rating for this profile.</h2>
+                    <button class="h-8 w-16 bg-gray-900 hover:text-black hover:bg-white ml-7 border-[1px] border-b-gray-200 text-white">Edit</button>
+                    <hr class="w-[600px] ml-50 mt-3">
+                    <h1 class="text-gray-200 ml-7 mt-7 font-bold text-xl">Autoplay controls</h1>
+                    <div class="flex flex-wrap">
+                        <div class="h-6 w-6 border-[1px] border-b-gray-200">
+                            <img src="{% static 'images\tick-01.svg' %}" alt="">
+                        </div>
+                        <h2 class="text-white ml-4">Autoplay next episode in a series in all device</h2>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="h-6 w-6 border-[1px] border-b-gray-200">
+                            <img src="{% static 'images\tick-01.svg' %}" alt="">
+                        </div>
+                        <h2 class="text-white ml-4">Autoplay next episode in a series in all device</h2>
+                    </div>
+                    <hr class="w-[600px] ml-50 mt-4">
+                    <button class="h-8 w-16 mt-4 bg-gray-900 hover:text-black hover:bg-white ml-2 border-[1px] border-b-gray-200 text-white" name="'save">Save</button>
+                    <a href="{% url 'manage_profile' %}" ><button class="h-8 w-16 mt-4 bg-gray-900 hover:text-black hover:bg-white ml-2 border-[1px]  border-b-gray-200 text-white" name="cancel">Cancel</button></a>
+                    <button class="h-8 w-32 mt-4 bg-gray-900 hover:text-black hover:bg-white ml-2 border-[1px] border-b-gray-200 text-white" name="delete">Delete Profile</button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+    <style>
+        .bg-custom {
+            background-image: url("{% static 'image/pi.jpeg' %}");
+        }
+    </style>
+</head>
+<body class="bg-opacity-75 bg-custom bg-cover bg-center flex justify-center" >
+    <div class="absolute inset-0 bg-black opacity-65"></div>
+
+    
+   {% for message in messages %}
+    <div id="alertbox" class="h-24 w-screen bg-black z-10 text-center text-white pt-10 relative">{{message}}
+        <button onclick="closeAlert()"><svg  class="absolute right-3 top-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="#ffffff" fill="none">
+            <path d="M19.0005 4.99988L5.00045 18.9999M5.00045 4.99988L19.0005 18.9999" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg></button>
+    </div>
+    {% endfor %}
+
+
+
+    <div class="h-[400px] w-[300px] absolute top-20 items-center justify-center bg-black bg-opacity-75 rounded-xl">
+        <h1 class="mb-10 mt-10 text-center text-2xl font-serif font-semibold text-white">LogIn</h1>
+        <form  class="flex flex-col justify-center items-center" method="post">
+           {% csrf_token %}
+            <input type="text" class="w-[250px] h-9 text-center border-spacing-4 rounded-lg font-serif font-bold" placeholder="UserName" name="username" required><br>
+           
+            <input type="password" class="w-[250px] h-9 text-center border-spacing-4 rounded-lg font-serif font-bold" placeholder="Password" name="password" required>
+            <button class="bg-slate-500 p-2 w-32 rounded-lg  hover:bg-slate-400  font-serif mt-5">Login</button>
+        </form>
+        <a href="{% url 'forgot_password' %}"><p class="underline text-white text-center mt-4">Forget Password?</p></a>
+
+    </div>
+    <script>
+        function closeAlert(){
+            closeDiv=document.getElementById('alertbox')
+            closeDiv.classList.add('hidden')
+
+        }
+    </script>
+</body>
+</html>

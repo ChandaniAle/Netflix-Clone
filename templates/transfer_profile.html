@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="h-screen w-screen  bg-gradient-to-tl from-fuchsia-950 to-pink-400">
+        <nav class="h-16 w-screen bg-black">
+            <img class=" absolute h-[80px] w-[120px] ml-16" src="{% static 'image\netbg.png' %}" alt="">
+            <img class="absolute h-10 w-11 mt-5 right-7" src="{% static 'image\profilen.jpg' %}" alt="">
+        </nav>
+        <div>
+            <h1 class="font-semibold text-4xl ml-24 mt-12 text-white">Do you want to allow profile <br>transfers?</h1>
+        </div>
+        <div class="mt-10 ml-20 flex gap-5">
+            <img class="h-8 w-8" src="{% static 'image\tick-02-stroke-rounded.svg'  %}" alt="">
+            <h1 class="font-medium text-white">Other people using your account will be able to transfer a profile<br> including recommendations, viewing history, My List, saved games, settings and more<br>to their own membership that they pay for. Learn more.</h1>
+        </div>
+
+        <div class="mt-10 ml-20 flex gap-5">
+            <img class="h-8 w-8" src="{% static 'image\tick-02-stroke-rounded.svg'  %}" alt="">
+            <h1 class="font-medium text-white">Allowing this feature will not log out any devices on your account. <br> We will never transfer your payment information. <br> Kids profiles cannot be transferred.</h1>
+        </div>
+
+        <div class="mt-10 ml-20 flex gap-5">
+            <img class="h-8 w-8" src="{% static 'image/tick-02-stroke-rounded.svg'  %}" alt="">
+            <h1 class="font-medium text-white">Simply click the button below to allow profiles to be transferred from your account. <br> Updating this setting will not affect profile transfers into your account.</h1>
+        </div>
+
+        <button class=" h-12 w-64 bg-white mt-10 ml-20">Allow</button>
+        <button class=" h-12 w-64 text-white mt-10 ml-6 border-[3px] border-red-700 ">GO Back To Home</button>
+    </div>
+    
+</body>
+</html>

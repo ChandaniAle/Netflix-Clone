@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+</head>
+<body class>
+    {% if user.is_authenticated %}
+    <div class="flex w-screen h-screen bg-black justify-center items-center">
+    <a href="{% url 'create_profile' %}"><h1 class="text-white text-3xl underline">Create Your Profile here</h1></a>
+    </div>
+    {% else %}
+    <h1>404 not found</h1>
+
+    {% endif %}
+</body>
+</html>

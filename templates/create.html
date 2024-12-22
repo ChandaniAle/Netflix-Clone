@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+</head>
+<body class>
+    {% if user.is_authenticated %}
+    <div class="w-screen h-screen bg-black flex justify-center items-center">
+        <form method="post" enctype="multipart/form-data" class="flex flex-col gap-3">
+            <input type="text" placeholder="Profile Name" name="profile_name" class="text-center h-15 w-30">
+            <label class="text-white text-4xl">Profile Image</label>
+            <input type="file" name="profile_image">
+            <button class="bg-white p-2">Create</button>
+        </form>
+    </div>
+    {% else %}
+    <h1>404 not found</h1>
+
+    {% endif %}
+</body>
+</html>

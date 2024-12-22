@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Font Awesome -->
+
+</head>
+<body>
+    <div class="absolute h-screen w-screen bg-black">
+        <h1 class="flex justify-center text-white font-bold text-4xl relative top-56 ">Manage Profiles</h1>
+        <div class="flex flex-col justify-center relative top-56">
+            <div class="flex flex-wrap justify-center gap-6 mt-6">
+            {% for profiles in profiles %}
+                <div class=" flex flex-col justify-center items-center ">
+                    <a href="{% url 'edit_profile' profiles.id %}"><img  class="h-[150px] w-[150px] hover:border-white hover:border-[2px] object-cover" src="{{profiles.image.url}}" alt=""></a>
+                    <img class="h-8 w-8 absolute" src="{% static 'image/edit-pen-icon.svg' %}" alt="">
+                    <h2 class="mt-5 text-white">{{profiles.name}}</h2>
+                </div>
+                
+            {% endfor %}
+            <a href="{% url 'profile' %}"> <div class=" flex justify-center mt-10 hover:bg-slate-400">
+                <button class=" h-full w-full flex justify-center text-white border-white border-1">Done</button>
+            </div>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

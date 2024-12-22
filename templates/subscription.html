@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{% static 'src/styles.css' %}" rel="stylesheet">
+</head>
+<body>
+  
+    <header class="bg-red-600 p-4 text-center text-2xl font-bold">
+        Netflix Subscription Plans
+      </header>
+      <main class="p-8">
+        <section class="text-center mb-12">
+          <h1 class="text-4xl font-bold mb-4">Choose your plan</h1>
+          <p class="text-lg">Watch all you want, ad-free. <br>Recommendations just for you.</p>
+        </section>
+    <form method="post" action="{% url 'payment' %}">
+        <section class="flex justify-center space-x-4">
+          <!-- Basic Plan -->
+          <div class="w-80 bg-white p-6 rounded-lg shadow-2xl">
+            <h2 class="text-2xl font-semibold mb-4">Basic</h2>
+            <p class="text-4xl font-bold mb-6">Rs.999 </p>
+            <ul class="space-y-2 mb-6">
+              <li>Good video quality</li>
+              <li>Watch on 1 device at a time</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="w-full bg-red-600 py-2 rounded-lg font-semibold" name="basic">Subscribe</button>
+          </div>
+    
+          <!-- Standard Plan -->
+          <div class="w-80 bg-white p-6 rounded-lg shadow-2xl">
+            <h2 class="text-2xl font-semibold mb-4">Standard</h2>
+            <p class="text-4xl font-bold mb-6">RS.1500 </p>
+            <ul class="space-y-2 mb-6">
+              <li>Better video quality</li>
+              <li>Watch on 2 devices at a time</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="w-full bg-red-600 py-2 rounded-lg font-semibold" name="standard">Subscribe</button>
+          </div>
+    
+          <!-- Premium Plan -->
+          <div class="w-80 bg-white p-6 rounded-lg shadow-2xl">
+            <h2 class="text-2xl font-semibold mb-4">Premium</h2>
+            <p class="text-4xl font-bold mb-6">Rs. 2000</p>
+            <ul class="space-y-2 mb-6">
+              <li>Best video quality</li>
+              <li>Watch on 4 devices at a time</li>
+              <li>Unlimited movies and TV shows</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <button class="w-full bg-red-600 py-2 rounded-lg font-semibold" name="premium">Subscribe</button>
+          </div>
+        </section>
+    </form>
+
+      </main>
+  
+</body>
+</html>
